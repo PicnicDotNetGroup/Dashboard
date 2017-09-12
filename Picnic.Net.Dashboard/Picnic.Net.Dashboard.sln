@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Picnic.Net.Dashboard", "Picnic.Net.Dashboard\Picnic.Net.Dashboard.csproj", "{A9BAAF57-BA7D-4A0D-A917-310097132491}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9BAAF57-BA7D-4A0D-A917-310097132491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BAAF57-BA7D-4A0D-A917-310097132491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BAAF57-BA7D-4A0D-A917-310097132491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BAAF57-BA7D-4A0D-A917-310097132491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD318A11-4169-439D-AF0C-903F2DF7C612}
+	EndGlobalSection
+EndGlobal
