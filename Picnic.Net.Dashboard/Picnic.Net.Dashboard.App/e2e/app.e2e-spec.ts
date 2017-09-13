@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('picnic.net.dashboard App', () => {
+describe('picnic.net.dashboard.app App', () => {
   let page: AppPage;
 
   beforeEach(() => {
