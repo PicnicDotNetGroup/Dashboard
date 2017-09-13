@@ -15,7 +15,7 @@ namespace Picnic.Net.Dashboard.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Hello", "Picnic.NET Group" };
+            return new string[] { "Hello", "Picnic.NET Group", "aaaaaa", "bbbbb" };
         }        
     }
 }
