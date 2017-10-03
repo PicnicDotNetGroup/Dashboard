@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { HelloWorldComponent } from './HelloWorld/hello-world.component';
-import { DateComponent } from './Date/date.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { DateComponent } from './date/date.component';
 
 @NgModule({
     declarations: [

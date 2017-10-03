@@ -17,7 +17,55 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
-/***/ "../../../../../src/app/Date/date.component.ts":
+/***/ "../../../../../src/app/app.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hello_world_hello_world_component__ = __webpack_require__("../../../../../src/app/hello-world/hello-world.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__date_date_component__ = __webpack_require__("../../../../../src/app/date/date.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_4__hello_world_hello_world_component__["a" /* HelloWorldComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__date_date_component__["a" /* DateComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */]
+        ],
+        providers: [],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__hello_world_hello_world_component__["a" /* HelloWorldComponent */], __WEBPACK_IMPORTED_MODULE_5__date_date_component__["a" /* DateComponent */]]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/date/date.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43,7 +91,6 @@ var DateComponent = (function () {
         var _this = this;
         this._httpService.get('/api/date').subscribe(function (d) {
             _this.date = d.text();
-            console.log(_this.date);
         });
     };
     return DateComponent;
@@ -61,7 +108,7 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/HelloWorld/hello-world.component.css":
+/***/ "../../../../../src/app/hello-world/hello-world.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -79,14 +126,14 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/HelloWorld/hello-world.component.html":
+/***/ "../../../../../src/app/hello-world/hello-world.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "<div>\r\n  <h1>{{helloworldtext}}!!!!!</h1>\r\n</div>\r\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/HelloWorld/hello-world.component.ts":
+/***/ "../../../../../src/app/hello-world/hello-world.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -108,60 +155,12 @@ var HelloWorldComponent = (function () {
 HelloWorldComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'hello-world',
-        template: __webpack_require__("../../../../../src/app/HelloWorld/hello-world.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/HelloWorld/hello-world.component.css")]
+        template: __webpack_require__("../../../../../src/app/hello-world/hello-world.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/hello-world/hello-world.component.css")]
     })
 ], HelloWorldComponent);
 
 //# sourceMappingURL=hello-world.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__HelloWorld_hello_world_component__ = __webpack_require__("../../../../../src/app/HelloWorld/hello-world.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Date_date_component__ = __webpack_require__("../../../../../src/app/Date/date.component.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-var AppModule = (function () {
-    function AppModule() {
-    }
-    return AppModule;
-}());
-AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__HelloWorld_hello_world_component__["a" /* HelloWorldComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__Date_date_component__["a" /* DateComponent */]
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */]
-        ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__HelloWorld_hello_world_component__["a" /* HelloWorldComponent */], __WEBPACK_IMPORTED_MODULE_5__Date_date_component__["a" /* DateComponent */]]
-    })
-], AppModule);
-
-//# sourceMappingURL=app.module.js.map
 
 /***/ }),
 
