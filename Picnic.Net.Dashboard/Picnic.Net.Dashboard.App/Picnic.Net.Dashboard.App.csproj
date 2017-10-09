@@ -76,8 +76,8 @@
     <Content Include="e2e\tsconfig.e2e.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\app\HelloWorld\hello-world.component.css" />
-    <Content Include="src\app\HelloWorld\hello-world.component.html" />
+    <Content Include="src\app\hello-world\hello-world.component.css" />
+    <Content Include="src\app\hello-world\hello-world.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
@@ -95,9 +95,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="e2e\app.po.ts" />
+    <TypeScriptCompile Include="src\app\app-dashboard\app-dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\Date\date.component.ts" />
-    <TypeScriptCompile Include="src\app\HelloWorld\hello-world.component.ts" />
+    <TypeScriptCompile Include="src\app\date\date.component.ts" />
+    <TypeScriptCompile Include="src\app\hello-world\hello-world.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

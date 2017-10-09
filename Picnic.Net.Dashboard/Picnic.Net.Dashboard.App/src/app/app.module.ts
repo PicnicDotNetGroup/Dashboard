@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { HelloWorldComponent } from './HelloWorld/hello-world.component';
-import { DateComponent } from './Date/date.component';
+import { AppDashboard } from './app-dashboard/app-dashboard.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { DateComponent } from './date/date.component';
 
 @NgModule({
     declarations: [
+        AppDashboard,
         HelloWorldComponent,
         DateComponent
     ],
@@ -18,6 +20,6 @@ import { DateComponent } from './Date/date.component';
         HttpModule
     ],
     providers: [],
-    bootstrap: [HelloWorldComponent, DateComponent]
+    bootstrap: [AppDashboard]
 })
 export class AppModule { }
