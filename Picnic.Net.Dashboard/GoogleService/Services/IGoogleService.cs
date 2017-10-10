@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using GoogleService.Boundary;
 
 namespace GoogleService.Services
 {
     public interface IGoogleService
     {
-        IGoogleModel GetData();
+        IEnumerable<IGoogleModel> GetData();
     }
 }

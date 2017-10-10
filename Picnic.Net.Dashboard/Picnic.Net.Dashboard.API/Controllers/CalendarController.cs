@@ -13,11 +13,11 @@ namespace Picnic.Net.Dashboard.API.Controllers
     {
         // GET: api/calendar
         [HttpGet]
-        public IGoogleModel Get()
+        public IEnumerable<IGoogleModel> Get()
         {
             IGoogleService service = GoogleService.Services.GoogleService.GetGoogleService(GoogleServiceEnum.Calendar);
-            IGoogleModel model = service.GetData();
-            return service.GetData();
+            IEnumerable<IGoogleModel> model = service.GetData();
+            return model;
         }        
     }
 }

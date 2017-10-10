@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace GoogleService.Boundary
 {
     public interface IGoogleModel
     {
-        int Id { get; set; }
+        string Id { get; set; }
+		string Date { get; set; }
+	    string Description { get; set; }
     }
 }

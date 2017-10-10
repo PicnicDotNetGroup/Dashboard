@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Calendar.v3;
@@ -15,67 +17,66 @@ namespace GoogleService.Services
     public class GoogleCalendar : GoogleService, IGoogleService
     {
         string[] Scopes = { CalendarService.Scope.CalendarReadonly };
-        string ApplicationName = "Google Calendar API .NET Quickstart";
-        
-        public IGoogleModel GetData()
+        string ApplicationName = "Dashboard";
+        private IReadOnlyDictionary<string,string> CalendarIds = new Dictionary<string,string>()
+        {
+            {"USA","en.usa#holiday@group.v.calendar.google.com"},
+            {"Poland","en.polish#holiday@group.v.calendar.google.com"},
+            {"India", "en.indian#holiday@group.v.calendar.google.com"}
+        };
+
+        public IEnumerable<IGoogleModel> GetData()
         {
 			UserCredential credential;
 
-			using (var stream =
-			 new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
-				{
-					string credPath = ".credentials/dashboard.json";
+            using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = ".credentials/dashboard.json";
 
-					credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-						GoogleClientSecrets.Load(stream).Secrets,
-						Scopes,
-						"user",
-						CancellationToken.None,
-						new FileDataStore(credPath, true)).Result;
-					Console.WriteLine("Credential file saved to: " + credPath);
-				}
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    Scopes,
+                    "user",
+                    CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+            }
 
-				// Create Google Calendar API service.
-				var service = new CalendarService(new BaseClientService.Initializer()
-				{
-					HttpClientInitializer = credential,
-					ApplicationName = ApplicationName,
-				});
+            var service = new CalendarService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = ApplicationName,
+            });
 
-				// Define parameters of request.
-				EventsResource.ListRequest request = service.Events.List("en.usa#holiday@group.v.calendar.google.com");
+            var allEvents = GetAllEvents(service);
+
+            foreach(var item in allEvents)
+            {
+				yield return new CalendarItem{
+                    Id = new Guid().ToString(),
+                    Date = DateTime.Now.ToString(),
+                    Description = item.country,
+                    Holidays = item.holiday.Select(e=> new CalendarItem{
+                        Id = e.Id,
+                        Date = e.Start.Date,
+                        Description = e.Summary,
+                    })
+                };
+            }
+        }
+
+        private IEnumerable<(string country,IEnumerable<Event> holiday)> GetAllEvents(CalendarService service)
+        {
+            foreach(var calendarId in CalendarIds)
+            {
+                EventsResource.ListRequest request = service.Events.List(calendarId.Value);
 				request.TimeMin = DateTime.Now;
 				request.ShowDeleted = false;
 				request.SingleEvents = true;
-				request.MaxResults = 10;
+				request.MaxResults = 30;
 				request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
-
-                var req1 = service.CalendarList.List();
-
-				// List events.
-				Events events = request.Execute();
-
-                var b = req1.Execute();
-
-				Console.WriteLine("Upcoming events:");
-				if (events.Items != null && events.Items.Count > 0)
-				{
-					foreach (var eventItem in events.Items)
-					{
-						string when = eventItem.Start.DateTime.ToString();
-						if (String.IsNullOrEmpty(when))
-						{
-							when = eventItem.Start.Date;
-						}
-						Console.WriteLine("{0} ({1})", eventItem.Summary, when);
-					}
-				}
-				else
-				{
-					Console.WriteLine("No upcoming events found.");
-				}
-			
-            return new CalendarItem();    
+				
+                yield return (country: calendarId.Key, holiday: request.Execute().Items);
+            }
         }
     }
 }

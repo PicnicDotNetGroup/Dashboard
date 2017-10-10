@@ -10,5 +10,6 @@
   <ItemGroup>
     <PackageReference Include="Google.Apis.Calendar.v3" Version="1.29.2.992" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.2" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
   </ItemGroup>
 </Project>
