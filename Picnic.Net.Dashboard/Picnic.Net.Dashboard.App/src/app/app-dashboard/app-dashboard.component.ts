@@ -2,8 +2,7 @@ import { Component } from '@angular/core'
 
 @Component({
     selector: 'app-dashboard',
-    template: `<hello-world></hello-world>
-    <date></date>`
+    templateUrl: './app-dashboard.component.html',
 })
 
 export class AppDashboard {

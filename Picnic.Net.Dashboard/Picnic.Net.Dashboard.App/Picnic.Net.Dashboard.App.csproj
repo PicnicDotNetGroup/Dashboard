@@ -83,6 +83,9 @@
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
+    <Content Include="src\app\holidays\holidays.component.css" />
+    <Content Include="src\app\holidays\holidays.component.html" />
+    <Content Include="src\app\app-dashboard\app-dashboard.component.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -110,6 +113,16 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\api\" />
+    <Folder Include="src\app\holidays\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\api\base.api.ts" />
+    <None Include="src\api\holidays.api.ts" />
+    <None Include="src\api\shared.ts" />
+    <None Include="src\app\holidays\holidays.component.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
