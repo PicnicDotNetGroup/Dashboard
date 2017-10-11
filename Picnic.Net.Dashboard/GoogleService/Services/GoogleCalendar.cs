@@ -16,8 +16,9 @@ namespace GoogleService.Services
 {
     public class GoogleCalendar : GoogleService, IGoogleService
     {
-        string[] Scopes = { CalendarService.Scope.CalendarReadonly };
-        string ApplicationName = "Dashboard";
+        
+        private readonly string ApplicationName = "Dashboard";
+        private const string API_KEY = "AIzaSyAFtGoV2zO6NgXF9XLFu0kTyGr6L_2ND8M";
         private IReadOnlyDictionary<string,string> CalendarIds = new Dictionary<string,string>()
         {
             {"USA","en.usa#holiday@group.v.calendar.google.com"},
@@ -27,24 +28,10 @@ namespace GoogleService.Services
 
         public IEnumerable<IGoogleModel> GetData()
         {
-			UserCredential credential;
-
-            using (var stream = new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
-            {
-                string credPath = ".credentials/dashboard.json";
-
-                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    GoogleClientSecrets.Load(stream).Secrets,
-                    Scopes,
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore(credPath, true)).Result;
-            }
-
             var service = new CalendarService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
+                ApiKey = API_KEY
             });
 
             var allEvents = GetAllEvents(service);
