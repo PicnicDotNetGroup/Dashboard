@@ -9,6 +9,11 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
     <PackageReference Include="VisualStudio.gitignore" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoogleService\GoogleService.csproj" />
+    <ProjectReference Include="..\GPWStocks\GPWStocks.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="client_secret.json">
