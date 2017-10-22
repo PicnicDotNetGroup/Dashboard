@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from "@angular/core";
 
 import { BaseHttpService } from './base.api';
+import { CalendarItem } from './../models/models';
 
 @Injectable()
 
@@ -14,9 +15,14 @@ export class HolidaysService extends BaseHttpService
         super(http);
      }
 
-    getAll() {
-       super.get("api/calendar")
-                .then(res => res)
-                .catch(err=>console.log("HolidayError"));
+    async getAll(): Promise<Array<CalendarItem>> {
+
+      var result = null;
+        await super.get("api/calendar")
+          .then(res => {
+            result = res;
+          })
+          .catch(err => console.log("HolidayError", err));
+        return result;
     }
 }

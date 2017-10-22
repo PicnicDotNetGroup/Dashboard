@@ -76,6 +76,7 @@
     <Content Include="e2e\tsconfig.e2e.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\app\component-factory\component-factory.component.html" />
     <Content Include="src\app\hello-world\hello-world.component.css" />
     <Content Include="src\app\hello-world\hello-world.component.html" />
     <Content Include="src\assets\.gitkeep" />
@@ -100,8 +101,11 @@
     <TypeScriptCompile Include="e2e\app.po.ts" />
     <TypeScriptCompile Include="src\app\app-dashboard\app-dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\component-factory\component-factory.component.ts" />
     <TypeScriptCompile Include="src\app\date\date.component.ts" />
     <TypeScriptCompile Include="src\app\hello-world\hello-world.component.ts" />
+    <TypeScriptCompile Include="src\app\components.ts" />
+    <TypeScriptCompile Include="src\config.dev.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
@@ -113,10 +117,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="src\api\" />
-    <Folder Include="src\app\holidays\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="src\api\base.api.ts" />
     <None Include="src\api\holidays.api.ts" />

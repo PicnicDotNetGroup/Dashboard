@@ -1,3 +1,3 @@
-<hello-world></hello-world>
-<date></date>
-<holidays></holidays>
+<div *ngFor="let component of components">
+  <component-factory [componentData]="component"></component-factory>
+</div>

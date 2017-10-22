@@ -6,25 +6,27 @@ import { HttpModule } from '@angular/http';
 
 //components
 import { AppDashboard } from './app-dashboard/app-dashboard.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { DateComponent } from './date/date.component';
-import { HolidaysComponent } from './holidays/holidays.component';
+import { ComponentFactoryComponent } from './component-factory/component-factory.component';
+import { HolidaysComponent, HelloWorldComponent, DateComponent } from './components';
 
 //services
 import { HolidaysService } from '../api/shared';
+
 
 @NgModule({
     declarations: [
         AppDashboard,
         HelloWorldComponent,
         DateComponent,
-        HolidaysComponent
+        HolidaysComponent,
+        ComponentFactoryComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule
     ],
+    entryComponents: [HolidaysComponent, HelloWorldComponent, DateComponent],
     providers: [HolidaysService],
     bootstrap: [AppDashboard]
 })

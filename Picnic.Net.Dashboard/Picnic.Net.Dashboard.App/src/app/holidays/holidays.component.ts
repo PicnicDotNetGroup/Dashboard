@@ -10,8 +10,14 @@ export class HolidaysComponent implements OnInit {
 
   constructor(private holidaysService:HolidaysService) { }
 
+  holidays: any[]; 
+
   ngOnInit() {
-    this.holidaysService.getAll();
+    this.init();
+  }
+
+  async init() {
+    this.holidays = await this.holidaysService.getAll();
   }
 
 }
