@@ -1,3 +1,7 @@
-<div *ngFor="let component of components">
-  <component-factory [componentData]="component"></component-factory>
+<div class="container">
+  <div class="row">
+    <div class="col-4" *ngFor="let component of components">
+      <component-factory [componentData]="component"></component-factory>
+    </div>
+  </div>
 </div>

@@ -20,7 +20,7 @@ export class HolidaysService extends BaseHttpService
       var result = null;
         await super.get("api/calendar")
           .then(res => {
-            result = res;
+            result = res as CalendarItem[];
           })
           .catch(err => console.log("HolidayError", err));
         return result;
