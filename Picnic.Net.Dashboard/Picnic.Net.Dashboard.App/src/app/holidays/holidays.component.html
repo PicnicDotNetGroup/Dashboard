@@ -1,3 +1,10 @@
-<div>
-  
-</div>
+<mat-card>
+  <mat-card-content>
+    <div class="header">Holidays</div>
+    <div *ngFor="let holiday of nearestHolidays">
+      <div class="country">{{holiday.country}}</div>
+      <div class="holiday">{{holiday.description}}</div>
+      <div class="holiday"> {{holiday.date | date}} </div>
+    </div>
+  </mat-card-content>
+</mat-card>

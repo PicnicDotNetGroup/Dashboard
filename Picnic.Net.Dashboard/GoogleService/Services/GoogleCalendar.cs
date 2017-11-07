@@ -38,15 +38,11 @@ namespace GoogleService.Services
 
             foreach(var item in allEvents)
             {
-				yield return new CalendarItem{
+                yield return new CalendarItem {
                     Id = new Guid().ToString(),
                     Date = DateTime.Now.ToString(),
                     Description = item.country,
-                    Holidays = item.holiday.Select(e=> new CalendarItem{
-                        Id = e.Id,
-                        Date = e.Start.Date,
-                        Description = e.Summary,
-                    })
+                    Holidays = item.holiday.Select(e => e.AsCalendarItem())
                 };
             }
         }
